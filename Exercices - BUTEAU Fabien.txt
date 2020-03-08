@@ -1,0 +1,16 @@
+Exercice 2 :
+La déclaration constite à informer le système de l'existance d'une variable (nom, type, ...), la définition donne des détails sur les propriétés de celle-ci.
+Une définition de variable indique où elle va être stockée, et la mémoire correspondante est allouée.
+
+Exercice 3 :
+Fonction : Sous programme comportant une suite d'instructions. Celle-ci peut ensuite être appelée par le programme principal ou par une autre fonction. La longueur du code du programme principal est, du coup, fortement diminuée.
+Procédure : C'est une fonction avec la particularité qu'elle ne renvoie pas de valeur.
+Méthode : Il s'agit d'une fonction, mais celle-ci est associée à un objet/Class.
+
+Exercice 4 :
+Assembleur : Programmation impérative
+Logo : Programmation orientée object
+CSS : Programmation déclarative (descriptive)
+
+Exercice 5 :
+Pas compris la question, discussion ouverte sur le forum.
