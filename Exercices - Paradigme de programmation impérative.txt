@@ -1,0 +1,138 @@
+/* Ex 1 : Coder une instruction de bouclage */
+int main() {
+  int n = 5;
+  int factorielle = 0;
+  int i = 0 ;
+  goto calcul;
+  calcul:
+  factorielle = factorielle + n - i;
+  i = i + 1;
+  if ((n - i) >= 1) goto calcul ;
+  else goto fin;
+  fin: 
+  printf("La factorielle de %d est égale à %d\n", n, factorielle);
+}
+
+/* Ex 2 : Coder une boucle */
+int main() {
+  int n = 5;
+  int factorielle = 0;
+  int i = 0 ;
+  while ((n - i) >= 1){
+    factorielle = factorielle + (n - i);
+    i = i + 1;
+  }
+  printf("La factorielle de %d est égale à %d\n", n, factorielle);
+}
+
+/* Ex 3 : Coder une fonction */
+int factorielle(int n){
+  int resultat = 0;
+  int i = 0;
+  while ((n - i) >= 1){
+    resultat = resultat + (n - i);
+    i = i + 1;
+  }
+  return resultat;
+}
+int main() {
+  int n = 5;
+  printf("La factorielle de %d est égale à %d\n", n, factorielle(n));
+}
+
+/* Ex 4 : Coder avec la récursivité */
+int factorielle(int n){
+  int resultat = 0;
+  int i = 0;
+  resultat = calcul(resultat,i,n);
+  return resultat;
+}
+int calcul(int resultat, int i, int n){
+  if ((n - i) >= 1){
+    resultat = resultat + (n - i);
+    i = i + 1;
+    resultat = calcul(resultat,i,n);
+  }
+  return resultat;
+}
+int main() {
+  int n = 6;
+  printf("La factorielle de %d est égale à %d\n", n, factorielle(n));
+}
+
+/* Limite de la récursivité */
+Je vois 2 limites à la récursivité: 
+1 - Un lecture du code plus compliqué (de mon point de vue)
+2 - Risque de créer une boucle
+
+/* Ex6 : Coder des fonctions de type map */
+#define N 5
+void mapDouble(int e[], int r[]){
+  for (int compteur = 0; compteur < 5; compteur = compteur + 1){
+    r[compteur] = e[compteur] * 2;
+  }
+}
+void mapTriple(int e[], int r[]){
+  for (int compteur = 0; compteur < 5; compteur = compteur + 1){
+    r[compteur] = e[compteur] * 3;
+  }
+}
+void mapSquare(int e[], int r[]){
+  for (int compteur = 0; compteur < 5; compteur = compteur + 1){
+    r[compteur] = e[compteur] * e[compteur];
+  }
+}
+void mapMaximize3(int e[], int r[]){
+  for (int compteur = 0; compteur < 5; compteur = compteur + 1){
+    if (e[compteur] <= 3){
+      r[compteur] = e[compteur];
+    }else{
+      r[compteur] = 3;
+    }
+  } 
+}
+
+int main(){
+  int e[N] = {1, 5, 2, 4, 3};
+  int r_double[N];
+  mapDouble(e, r_double);
+  int r_triple[N];
+  mapTriple(e, r_triple);
+  int r_square[N];
+  mapSquare(e, r_square);
+  int r_maximize3[N]; 
+  mapMaximize3(e, r_maximize3);
+}
+
+/* Ex 7 : Map Analyse */
+Dans Ex6, d'une fonction à l'autre, n'avez-vous pas éprouvé une sensation de "déjà vue" ? 
+Oui, en effet, une partie du code est identique dans les 4 fonctions.
+Peut-on factoriser ce code ? Oui, c'est possible.
+Quel mécanisme nous faudrait-il ? Il nous faudrait l'équivalent d'une instruction "selon".
+
+/* Ex 8 : Analyse de 3 codes */
+Que pensez-vous de ces 3 codes : avantages / inconvénients ? 
+Ces 3 codes me paraissent plutôt bien écrit, le code organisé en fonction afin de ne pas avoir la répétition de certaines lignes de code.
+
+Y-a-t'il moyen de faire mieux en langage impératif ? 
+Oui.
+
+Quel mécanisme nous faudrait-il ? 
+Nous pourrions utiliser la récursivité pour intégrer la gestion du gras dans la fonction trace.
+
+/* Ex 9 : Pour le fun */
+
+TO newstar
+  pd
+  rt 18
+  repeat 5 [ fd 33 rt -72 fd 33 rt 144 ]
+  pu
+  rt 72
+  fd 150
+  rt -90
+END
+clearscreen
+hideturtle
+setpencolor 6
+repeat 5 [newstar]
+
